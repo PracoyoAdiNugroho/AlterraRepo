@@ -27,6 +27,21 @@
   <label for="lsaran">Saran:</label><br>
   <input type="text" id="lsaran" name="lsaran">
 </form>
+<form>
+  <p>
+  <label>Fahrenheit</label>
+  <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
+  oninput="temperatureConverter(this.value)"
+  onchange="temperatureConverter(this.value)">
+</p>
+<p>Celsius: <span id="outputCelsius"></span></p>
 
 </body>
 </html>
+
+
+</form>
+function temperatureConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
+}
